@@ -10,14 +10,14 @@ class XylophoneApp extends StatelessWidget {
     await player.play(AssetSource('assets/audio/note$numberAudio.wav'));
   }
 
-  buidKey() {
+  Expanded buidKey({required int numberAudio, required MaterialColor color}) {
     return Expanded(
       child: TextButton(
         onPressed: () {
-          playSound(1);
+          playSound(numberAudio);
         },
         style: TextButton.styleFrom(
-          backgroundColor: Colors.red, // Background color
+          backgroundColor: color, // Background color
           minimumSize: Size(100, 50), // Size of the button
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.zero, // Rectangle shape
@@ -37,98 +37,12 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buidKey(),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(2);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.orange, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(3);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.yellow, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(4);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(5);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.teal, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(6);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    playSound(7);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor:
-                        Colors.deepPurpleAccent, // Background color
-                    minimumSize: Size(100, 50), // Size of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero, // Rectangle shape
-                    ),
-                  ),
-                  child: SizedBox.shrink(), // No child widget
-                ),
-              ),
+              buidKey(color: Colors.red, numberAudio: 1),
+              buidKey(color: Colors.orange, numberAudio: 2),
+              buidKey(color: Colors.yellow, numberAudio: 3),
+              buidKey(color: Colors.green, numberAudio: 4),
+              buidKey(color: Colors.blue, numberAudio: 5),
+              buidKey(color: Colors.purple, numberAudio: 6),
             ],
           ),
         ),
